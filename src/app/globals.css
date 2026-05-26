@@ -322,33 +322,34 @@ ul { list-style: none; }
   pointer-events: none;
   z-index: 10000;
   transform: translate(-50%, -50%);
-  transition-property: transform;
-  transition-timing-function: ease;
   border-radius: 50%;
 }
 
 .cursor-dot {
-  width: 10px;
-  height: 10px;
-  background: var(--color-yellow);
-  transition-duration: 0.1s;
-  /* Dark ring makes it visible on any background */
-  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.25), 0 0 12px rgba(247,206,0,0.6);
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.8), 0 0 16px rgba(0,83,255,0.7);
 }
 
 .cursor-outline {
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(0, 0, 0, 0.25);
-  background: rgba(255,255,255,0.08);
-  transition-duration: 0.15s;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(0,83,255,0.5);
+  background: rgba(0,83,255,0.04);
+  backdrop-filter: blur(2px);
+  transition: width 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              height 0.3s cubic-bezier(0.34,1.56,0.64,1),
+              background 0.3s ease,
+              border-color 0.3s ease;
 }
 
 .cursor-outline.hover-state {
-  width: 56px;
-  height: 56px;
-  background: rgba(0,83,255,0.08);
+  width: 60px;
+  height: 60px;
+  background: rgba(0,83,255,0.1);
   border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(0,83,255,0.2);
 }
 
 /* ── Logo ── */
@@ -2020,7 +2021,7 @@ ul { list-style: none; }
   }
 
   .btn-nav   { display: none; }
-  .hamburger { display: flex; margin-left: auto; }
+  .hamburger { display: none; }
 
   /* X icon when open */
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--color-text)!important; }
